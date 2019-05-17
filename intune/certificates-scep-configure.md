@@ -44,6 +44,9 @@ The NDES server must be joined to a domain within the same forest as the Enterpr
 
 This NDES Certificate connector also supports Federal Information Processing Standard (FIPS) mode. FIPS isn't required, but you can issue and revoke certificates when it's enabled.
 
+Note: The Microsoft Intune Certificate Connector needs to be able to login to and communicate with the Intune Service.
+See more at netowrk requirements 
+
 - **Web Application Proxy Server** (optional): Use a server that runs Windows Server 2012 R2 or later as a Web Application Proxy (WAP) server. This configuration:
   - Allows devices to receive certificates using an Internet connection.
   - Is a security recommendation when devices connect through the Internet to receive and renew certificates.
@@ -64,6 +67,10 @@ If you don't use a reverse proxy, such as WAP or Azure AD App Proxy, then allow 
 Allow all ports and protocols necessary between the NDES server and any supporting infrastructure. For example, the NDES server needs to communicate with the CA, DNS servers, Configuration Manager servers, domain controllers, and possibly other services within your environment.
 
 We highly recommend publishing the NDES server through a reverse proxy, such as the [Azure AD application proxy](https://azure.microsoft.com/documentation/articles/active-directory-application-proxy-publish/), [Web Access Proxy](https://technet.microsoft.com/library/dn584107.aspx), or a third-party proxy.
+
+The Server hosting the Microsoft Intune Certificate Connector needs to login to and connect to Intune
+For more information regarding the Service Endpoints see https://docs.microsoft.com/en-us/intune/network-bandwidth-use
+Also note that Internet Explorer Enhanced Security needs to be turned off on the server.
 
 ### Certificates and templates  
 
